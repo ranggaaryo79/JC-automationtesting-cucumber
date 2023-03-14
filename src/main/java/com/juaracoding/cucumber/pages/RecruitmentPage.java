@@ -46,6 +46,19 @@ public class RecruitmentPage {
     @FindBy(xpath = "//button[@type='submit']")
     WebElement save;
 
+    @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
+    WebElement txtRecruitment;
+
+    public void setClickRecruitment(){
+        clickRecruitment.click();
+    }
+
+    public void addButton(){
+        add.click();
+    }
+    public String getTxtRecruitment() {
+        return txtRecruitment.getText();
+    }
 
     public void rec() {
 

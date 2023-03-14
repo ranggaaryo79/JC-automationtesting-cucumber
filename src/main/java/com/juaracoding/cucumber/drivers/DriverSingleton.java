@@ -2,6 +2,7 @@ package com.juaracoding.cucumber.drivers;
 
 import com.juaracoding.cucumber.drivers.strategies.DriverStrategy;
 import com.juaracoding.cucumber.drivers.strategies.DriverStrategyImplementer;
+import com.juaracoding.cucumber.utils.Constans;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -17,7 +18,7 @@ public class DriverSingleton {
     public WebDriver instantiate(String strategy) {
         DriverStrategy driverStrategy = DriverStrategyImplementer.chooseStrategy(strategy);
         driver = driverStrategy.setStrategy();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Constans.TIMEOUT, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }

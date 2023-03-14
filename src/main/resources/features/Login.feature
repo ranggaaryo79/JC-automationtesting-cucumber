@@ -13,10 +13,10 @@ Feature: Login User HRM
     And User enter invalid username
     And User enter invalid password
     And User click button login
-    Then user get message invalid credentials
+    Then User get message invalid credentials
 
   Scenario: User No input password into web HRM
     When User enter valid username
     And User no input password
     And  User click button login
-    Then user get message Required
+    Then User get message Required

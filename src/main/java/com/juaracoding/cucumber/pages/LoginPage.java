@@ -35,6 +35,7 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     WebElement requiredInput;
+
     public String getLoginTitle() {
         return loginTitle.getText();
     }
@@ -42,23 +43,34 @@ public class LoginPage {
     public void enterUsername(String username) {
         this.username.sendKeys(username);
     }
+
     public void enterPassword(String password) {
         this.password.sendKeys(password);
     }
+
     public void buttonClick() {
         btnLogin.click();
     }
 
-    public void buttonLogout(){
+    public void loginAdmin(String username, String password) {
+        this.username.sendKeys(username);
+        this.password.sendKeys(password);
+        btnLogin.click();
+    }
+
+    public void buttonLogout() {
         dropdownUser.click();
         btnLogout.click();
     }
-    public String getTxtInvalidCredentials(){
+
+    public String getTxtInvalidCredentials() {
         return txtInvalidCredentials.getText();
     }
+
     public String getTxtDashboard() {
         return txtDashboard.getText();
     }
+
     public String getTxtRequired() {
         return requiredInput.getText();
     }
